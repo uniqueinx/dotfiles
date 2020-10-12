@@ -12,19 +12,19 @@
 font:
   # The normal (roman) font face to use.
   normal:
-    family:  JetBrainsMono Nerd Font
+    family: JetBrains Mono
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family:  JetBrainsMono Nerd Font
+    family: JetBrains Mono
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family:  JetBrainsMono Nerd Font
+    family: JetBrains Mono
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -61,65 +61,37 @@ window:
 
 draw_bold_text_with_bright_colors: true
 
-# # Colors (Gruvbox dark)
-# colors:
-#   # Default colors
-#   primary:
-#     # hard contrast: background = '0x1d2021'
-#     background: '0x282828'
-#     # soft contrast: background = '0x32302f'
-#     foreground: '0xebdbb2'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x282828'
-#     red:     '0xcc241d'
-#     green:   '0x98971a'
-#     yellow:  '0xd79921'
-#     blue:    '0x458588'
-#     magenta: '0xb16286'
-#     cyan:    '0x689d6a'
-#     white:   '0xa89984'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x928374'
-#     red:     '0xfb4934'
-#     green:   '0xb8bb26'
-#     yellow:  '0xfabd2f'
-#     blue:    '0x83a598'
-#     magenta: '0xd3869b'
-#     cyan:    '0x8ec07c'
-#     white:   '0xebdbb2'
-
- 
+# Colors (Gruvbox dark)
 colors:
-  name: Monokai (dark)
-  author: Chris Kempson
+  # Default colors
   primary:
-    background: "#272822"
-    foreground: "#f8f8f2"
-  cursor:
-    text: "#272822"
-    cursor: "#f8f8f2"
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
+
+  # Normal colors
   normal:
-    black: "#272822"
-    red: "#f92672"
-    green: "#a6e22e"
-    yellow: "#f4bf75"
-    blue: "#66d9ef"
-    magenta: "#ae81ff"
-    cyan: "#a1efe4"
-    white: "#f8f8f2"
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+
+  # Bright colors
   bright:
-    black: "#75715e"
-    red: "#f92672"
-    green: "#a6e22e"
-    yellow: "#f4bf75"
-    blue: "#66d9ef"
-    magenta: "#ae81ff"
-    cyan: "#a1efe4"
-    white: "#f9f8f5"
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+
 # Visual bell
 bell:
   animation: EaseOutExpo
