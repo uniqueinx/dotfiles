@@ -1,4 +1,4 @@
-timedatectl seet-ntp true
+timedatectl set-ntp true
 localectl set-locale LANG=en_US.UTF-8
 # optimize repo mirrors
 # reflector -c egypt -a 12 --sort rate --save /etc/pacman.d/mirrorlist
@@ -51,7 +51,7 @@ systemctl enable org.cups.cupsd
 useradd -mG wheel vex
 passwd
 # enter password 
-Editor=nano
+EDITOR=nano
 visudo
 # uncomment the first wheel group to enable sudo 
 reboot 
