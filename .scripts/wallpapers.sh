@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RESOLUTION="2560x1440"
+RESOLUTION="1920x1080"
 URL="https://source.unsplash.com/featured/${RESOLUTION}/?cyberpunk"
 WALLPAPER=~/.images/wallpaper.jpeg
 
