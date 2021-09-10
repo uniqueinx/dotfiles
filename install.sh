@@ -1,5 +1,11 @@
 timedatectl set-ntp true
 localectl set-locale LANG=en_US.UTF-8
+# rfkill unblock all
+# iwctl
+# device list
+# station <wlan0> scan 
+# station <wlan0> get-networks
+# station <wlan0> connect <ssid> 
 # optimize repo mirrors
 # reflector -c egypt -a 12 --sort rate --save /etc/pacman.d/mirrorlist
 # view disks
