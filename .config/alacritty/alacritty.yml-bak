@@ -28,7 +28,7 @@ font:
     # Style can be specified to pick a specific face.
     style: Italic
 
-  size: 8.0
+  size: 10.0
   offset:
     y: 0
     x: 0
@@ -61,69 +61,71 @@ window:
 
 draw_bold_text_with_bright_colors: true
 
-#colors:
-#  # Default colors
-#  primary:
-#    background: '0x272822'
-#    foreground: '0xf8f8f2'
-#
-#  # Normal colors
-#  normal:
-#    black:   '0x272822'
-#    red:     '0xf92672'
-#    green:   '0xa6e22e'
-#    yellow:  '0xf4bf75'
-#    blue:    '0x66d9ef'
-#    magenta: '0xae81ff'
-#    cyan:    '0xa1efe4'
-#    white:   '0xf8f8f2'
-#
-#  # Bright colors
-#  bright:
-#    black:   '0x75715e'
-#    red:     '0xf92672'
-#    green:   '0xa6e22e'
-#    yellow:  '0xf4bf75'
-#    blue:    '0x66d9ef'
-#    magenta: '0xae81ff'
-#    cyan:    '0xa1efe4'
-#    white:   '0xf9f8f5'
+# # Colors (Gruvbox dark)
+# colors:
+#   # Default colors
+#   primary:
+#     # hard contrast: background = '0x1d2021'
+#     background: '0x282828'
+#     # soft contrast: background = '0x32302f'
+#     foreground: '0xebdbb2'
 
+#   # Normal colors
+#   normal:
+#     black:   '0x282828'
+#     red:     '0xcc241d'
+#     green:   '0x98971a'
+#     yellow:  '0xd79921'
+#     blue:    '0x458588'
+#     magenta: '0xb16286'
+#     cyan:    '0x689d6a'
+#     white:   '0xa89984'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x928374'
+#     red:     '0xfb4934'
+#     green:   '0xb8bb26'
+#     yellow:  '0xfabd2f'
+#     blue:    '0x83a598'
+#     magenta: '0xd3869b'
+#     cyan:    '0x8ec07c'
+#     white:   '0xebdbb2'
+
+ 
 colors:
-  # Default colors
+  name: Monokai (dark)
+  author: Chris Kempson
   primary:
-    background: '0x1c1c1c'
-    foreground: '0xc5c5c5'
-
-  # Normal colors
+    background: "#272822"
+    foreground: "#f8f8f2"
+  cursor:
+    text: "#272822"
+    cursor: "#f8f8f2"
   normal:
-    black:   '0x1c1c1c'
-    red:     '0xff005b'
-    green:   '0xcee318'
-    yellow:  '0xffe755'
-    blue:    '0x048ac7'
-    magenta: '0x833c9f'
-    cyan:    '0x0ac1cd'
-    white:   '0xe5e5e5'
-
-  # Bright colors
+    black: "#272822"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f8f8f2"
   bright:
-    black:   '0x666666'
-    red:     '0xff00a0'
-    green:   '0xccff00'
-    yellow:  '0xff9f00'
-    blue:    '0x48c6ff'
-    magenta: '0xbe67e1'
-    cyan:    '0x63e7f0'
-    white:   '0xf3f3f3'
-
-
+    black: "#75715e"
+    red: "#f92672"
+    green: "#a6e22e"
+    yellow: "#f4bf75"
+    blue: "#66d9ef"
+    magenta: "#ae81ff"
+    cyan: "#a1efe4"
+    white: "#f9f8f5"
 # Visual bell
 bell:
   animation: EaseOutExpo
   duration: 0
 
-# background_opacity: .9
+background_opacity: .9
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -153,12 +155,11 @@ key_bindings:
   - { key: Y,        mods: Control, action: Paste                        }
   - { key: W,        mods: Alt,     action: Copy                         }
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
-  - { key: Key0,           mods: Control, action: ResetFontSize    }
-  - { key: Equals,         mods: Control, action: IncreaseFontSize }
-  - { key: Plus,           mods: Control, action: IncreaseFontSize }
-  - { key: NumpadAdd,      mods: Control, action: IncreaseFontSize }
-  - { key: Minus,          mods: Control, action: DecreaseFontSize }
-  - { key: NumpadSubtract, mods: Control, action: DecreaseFontSize } 
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Add,      mods: Control,       action: IncreaseFontSize }
+  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
   - { key: Paste,                    action: Paste                            }
   - { key: Copy,                     action: Copy                             }

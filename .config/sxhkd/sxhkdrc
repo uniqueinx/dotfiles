@@ -1,0 +1,45 @@
+super + shift + b
+	/usr/bin/brave
+
+XF86MonBrightness{Up,Down}
+	xbacklight {+,-}5% && dunstify -r 123432 "Brightness: $(xbacklight | cut -d'.' -f1)"
+
+XF86AudioMute
+	bash -c 'pamixer -t; [[ $(pamixer --get-mute) == false ]] && dunstify -r 123321 "Volume" || dunstify -r 123321  "Muted" '
+
+XF86AudioRaiseVolume
+	bash -c '[[ $(pamixer --get-volume) -lt 150 ]] && pamixer --allow-boost -i 2; dunstify -r 123321 "Vol: $(pamixer --get-volume)"' & 
+
+XF86AudioLowerVolume
+	pamixer --allow-boost -d 2 && dunstify -r 123321 "Vol: $(pamixer --get-volume)" &
+
+XF86AudioMicMute
+		amixer set Capture toggle && amixer get Capture | grep '\[off\]' && dunstify "MIC OFF" || dunstify "MIC ON"
+
+
+super + shift + l
+	betterlockscreen -l blur
+
+Print
+	maim ~/Pictures/$(date +%s).png
+
+ctrl + Print
+	maim -i $(xdotool getactivewindow) ~/Pictures/$(date +%s).png
+
+shift + Print
+	maim -s | xclip -selection clipboard -t image/png
+
+super + bracketright
+	bash ~/.scripts/shutmenu.sh
+
+super + shift + g
+	bash ~/.scripts/github.sh
+
+super + shift + s
+	/usr/bin/slack
+
+super + shift + d
+	alacritty --working-directory ~/Videos -e axel "$(xclip -o)" -n 8 -k
+
+alt + shift + d
+  brave --incognito http://localhost:8000/desk

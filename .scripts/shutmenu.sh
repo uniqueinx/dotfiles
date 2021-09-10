@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RET=$(echo -e "Shutdown\nReboot\nLogout\nCancel" | dmenu -p "Action")
+RET=$(echo -e "Reboot\nShutdown\nLogout\nCancel" | dmenu -p "Action")
 
 case $RET in
 	Shutdown) systemctl poweroff ;;

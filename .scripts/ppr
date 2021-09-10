@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+import sys
+from subprocess import check_output
+
+
+def create_pr_data(branch, jira_id, short_desc, long_desc=None):
+    if branch == "master":
+        dest = "master"
+    elif branch == "release":
+        dest = "release/16.0.0"
+    elif branch == "staging":
+        dest = "staging"
+
+    if not long_desc:
+        long_desc = short_desc
+    else:
+        long_desc = "\n".join([f"- {i}" for i in long_desc])
+
+    title = f"{branch.title()} [{jira_id.upper()}] {short_desc}"
+    body = (
+        "**Title**\n"
+        f"{branch.title()} [{jira_id.upper()}] {short_desc}\n\n"
+        "**JIRA ID**\n"
+        f"https://pm-nana.atlassian.net/browse/{jira_id.upper()}\n\n"
+        "**Short Description**\n"
+        f"{long_desc}\n"
+    )
+    return dest, title, body
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 4:
+        print("""
+        Usage:
+        ex: prs.py "master" "shopp-89" "add new thing" "add the new long thing" "extra" 
+        """)
+        sys.exit()
+    dest, title, body = create_pr_data(
+        sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4:]
+    )
+    command =  [
+            "gh",
+            "pr",
+            "create",
+            "-B",
+            dest,
+            "-t",
+            title,
+            "-b",
+            body
+        ]
+    if dest == "master":
+        command.extend(["-l", "Code Review Required", "-l", "Waiting QA Approval"])
+    output = check_output(command)
+    print(output.decode())
